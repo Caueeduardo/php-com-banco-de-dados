@@ -5,8 +5,8 @@ class ConexaoDB {
     const HOST = 'aws-0-sa-east-1.pooler.supabase.com';
     const PORT = '5432';
     const DBNAME = 'postgres';
-    const USER = 'postgres.vtglfccczgitidfkllmq';
-    const PASS = '2LkZ9VcOsYM80XuI';
+    const USER = 'SEU_USUARIO_SUPABASE';
+    const PASS = 'SUA_SENHA_SUPABASE';
 
     private static $conexao = null;
 
