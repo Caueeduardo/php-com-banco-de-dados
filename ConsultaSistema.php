@@ -21,19 +21,18 @@ $consultaSistema = '<!DOCTYPE html>
 // Pegar os dados do banco de dados 
 require_once("conexao/Utils.php");
 
-$sql = " select * from sistema where siscodigo >=1 order by siscodigo";
+$sql = " select * from sistema where siscodigo >= 1 order by siscodigo";
 $aListaSistema = getQuery()->selectAll($sql);
 
-// echo "<pre>" . print_r($aDados, true) ."</pre>"; return true;
-
+echo "<pre>" . print_r($aListaSistema, true) ."</pre>"; return true;
 
 foreach($aListaSistema as $aSistema){
     // INICIA A LINHA
     $consultaSistema .= '<tr>';
 
     // COLUNAS
-    $consultaSistema .= '<td>' . $aSistema["siscodigo"] . '</td>';
-    $consultaSistema .= '<td>' . $aSistema["sisnome"] . '</td>';
+    $consultaSistema .= '   <td>' . $aSistema["siscodigo"] . '</td>';
+    $consultaSistema .= '   <td>' . $aSistema["sisnome"] . '</td>';
     
     if($aSistema["sisativo"] == 1){
         $consultaSistema .= '<td>ATIVO</td>';
