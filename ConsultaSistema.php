@@ -24,7 +24,7 @@ require_once("conexao/Utils.php");
 $sql = " select * from sistema where siscodigo >= 1 order by siscodigo";
 $aListaSistema = getQuery()->selectAll($sql);
 
-echo "<pre>" . print_r($aListaSistema, true) ."</pre>"; return true;
+// echo "<pre>" . print_r($aListaSistema, true) ."</pre>"; return true;
 
 foreach($aListaSistema as $aSistema){
     // INICIA A LINHA
