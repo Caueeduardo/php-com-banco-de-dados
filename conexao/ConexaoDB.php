@@ -5,8 +5,8 @@ class ConexaoDB {
     const HOST = 'aws-0-sa-east-1.pooler.supabase.com';
     const PORT = '5432';
     const DBNAME = 'postgres';
-    const USER = 'SEU_USUARIO_SUPABASE';
-    const PASS = 'SUA_SENHA_SUPABASE';
+    const USER = 'postgres.vtglfccczgitidfkllmq';
+    const PASS = '2LkZ9VcOsYM80XuI';
 
     private static $conexao = null;
 
@@ -21,7 +21,9 @@ class ConexaoDB {
         if (is_null(self::$conexao)) {
             self::$conexao = pg_connect('host=' . self::HOST . ' port=' . self::PORT . ' dbname=' . self::DBNAME . ' user=' . self::USER . ' password=' . self::PASS);
             if (self::$conexao === false) {
-                throw new Exception('Erro ao comunicar com banco de dados!');
+                echo ('<p style="color:red; font-size:25px">Erro ao comunicar com banco de dados!</p>');
+                
+                throw new Exception('Erro ao comunicar com banco de dados!</p>');
             }
         }
         return self::$conexao;
