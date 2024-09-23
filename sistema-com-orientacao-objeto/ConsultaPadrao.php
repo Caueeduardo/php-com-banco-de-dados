@@ -76,16 +76,24 @@ class ConsultaPadrao {
         return array();
     }
 
+    protected function getDadosConsulta(){
+        // Pegar os dados do banco de dados 
+        $sqlConsulta = $this->getSqlConsulta();
+        
+        $aListaDadosConsulta = getQuery()->selectAll($sqlConsulta);
+
+        return $aListaDadosConsulta;
+    }
+
     protected function getLinhas(){
         $fimCabecalho = '</thead>';
         $inicioLinhas = '<tbody>';
         $consulta = $fimCabecalho . $inicioLinhas;
 
         // Pegar os dados do banco de dados 
-        $sqlConsulta = $this->getSqlConsulta();
-        $aLista = getQuery()->selectAll($sqlConsulta);
+        $aListaDadosConsulta = $this->getDadosConsulta();
 
-        foreach($aLista as $aDados){
+        foreach($aListaDadosConsulta as $aDados){
             // INICIA A LINHA
             $consulta .= '<tr>';
 
