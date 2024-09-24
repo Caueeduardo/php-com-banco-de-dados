@@ -100,7 +100,7 @@ class ConsultaPadrao {
             // COLUNAS
             $aColunas = $this->getColunasBancoDados();
             foreach($aColunas as $coluna){
-                $consulta .= '   <td>' . $aDados[$coluna] . '</td>';
+                $consulta .= '   <td align="center">' . $aDados[$coluna] . '</td>';
             }
 
             // FECHA A LINHA
